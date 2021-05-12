@@ -14,15 +14,16 @@ import java.sql.Connection;
  */
 public class DBConnection {
 
-    private static final String db_url = "jdbc:mysql://localhost:3306/cyber_crime_db?useSSL=false";
-    private static final String db_username = "root";
-    private static final String db_password = "1234";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/cyber_crime_db?useSSL=false";
+    private static final String DB_USERNAME = "root";
+    private static final String DB_PASSWORD = "1234";
+    private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getConnection() {
         Connection conn = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(db_url, db_username, db_password);
+            Class.forName(DB_DRIVER);
+            Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             conn = connection;
         } catch (Exception e) {
             e.printStackTrace();
