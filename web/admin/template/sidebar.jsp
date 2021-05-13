@@ -36,7 +36,15 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li>
-                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
+                            <a class="has-arrow waves-effect waves-dark" href="home.jsp" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home </span></a>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="users.jsp" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Users </span></a>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="complains.jsp" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Complains </span></a>
                         </li>
 
                     </ul>
