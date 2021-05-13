@@ -89,4 +89,43 @@ public class UserModel {
         return user;
     }
 
+
+    public static boolean removeUser(int id) {
+        Connection connection = null;
+        boolean status = true;
+
+        try {
+
+            connection = DBConnection.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user WHERE id = ?");
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+
+                PreparedStatement preparedStatement1 = connection.prepareStatement("UPDATE user SET status = ? WHERE id = ?");
+                preparedStatement1.setInt(1, 0);
+                preparedStatement1.setInt(2, id);
+
+                preparedStatement1.executeUpdate();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        return status;
+    }
+
+
+
+
+
 }

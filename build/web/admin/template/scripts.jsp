@@ -33,3 +33,11 @@
 <!-- Style switcher -->
 <!-- ============================================================== -->
 <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1//jquery.min.js"></script>--%>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.all.min.js" integrity="sha512-jQxNe7fqaqehR3t/JfoxC8y2dwkEIL/7a6JWbs6sQdSCI/6Kd0t2okI9nhuKeSUgM5JDTDgdUzLzSPovB2lOBQ==" crossorigin="anonymous"></script>
