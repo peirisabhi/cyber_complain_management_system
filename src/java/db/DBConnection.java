@@ -14,10 +14,10 @@ import java.sql.Connection;
  */
 public class DBConnection {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/cyber_crime_db?useSSL=false";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "1234";
-    private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+    public static final String DB_URL = "jdbc:mysql://localhost:3306/cyber_crime_db?useSSL=false";
+    public static final String DB_USERNAME = "root";
+    public static final String DB_PASSWORD = "1234";
+    public static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getConnection() {
         Connection conn = null;

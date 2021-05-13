@@ -41,10 +41,10 @@
                         </a>
                         <ul class="dropdown-menu ">
                             <%--                            <li><a href=""><i class=" icon-bargraph"></i> Dashboard</a></li>--%>
-                            <li><a href="https://templates.scriptsbundle.com/knowledge/demo/profile-setting.html"><i
+                            <li><a href="profile.jsp"><i
                                     class=" icon-gears"></i> Profile Setting</a></li>
-                            <li><a href="https://templates.scriptsbundle.com/knowledge/demo/question-list.html"><i
-                                    class="icon-heart"></i> Questions</a></li>
+                            <li><a href="my-complains.jsp"><i
+                                    class="icon-heart"></i> My Complains</a></li>
                             <li><a href="#"><i class="icon-lock"></i> Logout</a></li>
                         </ul>
                     </li>

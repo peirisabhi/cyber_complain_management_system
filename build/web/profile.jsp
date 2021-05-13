@@ -129,7 +129,7 @@
 <%--                                </div>--%>
 <%--                            </div>--%>
 
-                            <button class="btn btn-primary btn-lg">Update My Profile</button>
+<%--                            <button class="btn btn-primary btn-lg">Update My Profile</button>--%>
 
                         </form>
                         <!-- form login -->
