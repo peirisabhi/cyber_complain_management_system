@@ -20,14 +20,15 @@
                     <!-- User profile text-->
                     <div class="profile-text">
                         <h5>Markarn Doe</h5>
-                        <div class="dropdown-menu animated flipInY">
-                           
-                            <!-- text-->
-                            <div class="dropdown-divider"></div>
-                            <!-- text-->
-                            <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
-                            <!-- text-->
-                        </div>
+                        <a href="pages-login.html" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+<%--                        <div class="dropdown-menu animated flipInY">--%>
+<%--                           --%>
+<%--                            <!-- text-->--%>
+<%--                            <div class="dropdown-divider"></div>--%>
+<%--                            <!-- text-->--%>
+<%--                            <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>--%>
+<%--                            <!-- text-->--%>
+<%--                        </div>--%>
                     </div>
                 </div>
                 <!-- End User profile text-->

@@ -74,106 +74,141 @@
         <!-- Container fluid  -->
         <!-- ============================================================== -->
         <div class="container-fluid">
-            <!-- Row -->
-            <div id="div_edit">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card card-outline-info">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">Update sub category form</h4>
-                            </div>
-                            <div class="card-body">
-                                <form id="form_update" name="form_update" role="form" method="POST"
-                                      class="form-horizontal">
 
-                                    <div class="form-actions">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-offset-3 col-md-9">
-                                                        <button type="submit" class="btn btn-success">Update</button>
-                                                        <button type="reset" class="btn btn-inverse">Clear</button>
-                                                        <button type="button" onclick="show_insert_form()"
-                                                                class="btn btn-info">Add Sub Category
-                                                        </button>
-                                                    </div>
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myLargeModalLabel">Complain Details</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form_insert" name="form_insert" role="form" method="POST"
+                                  class="form-horizontal">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Title</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="title" class="form-control"
+                                                           required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6"></div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Category</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="category"  class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Date</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="date"  class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Time</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="time" class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complained Date</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="complained_date" class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complainer Name</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="complainer_name" class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complainer Email</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="complainer_email" name="name" class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complainer Mobile</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" disabled id="complainer_mobile" name="name" class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complain Description</label>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" id="description" disabled rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">
+                                Close
+                            </button>
                         </div>
                     </div>
+                    <!-- /.modal-content -->
                 </div>
+                <!-- /.modal-dialog -->
             </div>
-            <!-- Row -->
 
-            <!-- Row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card card-outline-info">
-                        <div class="card-header">
-                            <h4 class="m-b-0 text-white">Complain List</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive m-t-40">
-                                <table id="myTable" class="table table-bordered table-striped">
-
-                                    <tr>
-                                        <th>User Id</th>
-                                        <th>Title</th>
-                                        <th>Category</th>
-                                        <th>Complainer</th>
-                                        <th>Status</th>
-                                        <th>Complained Date</th>
-                                        <th>Action</th>
-                                    </tr>
-
-                                    <sql:setDataSource var="myDS" driver="<%= DBConnection.DB_DRIVER%>"
-                                                       url="<%= DBConnection.DB_URL%>"
-                                                       user="<%= DBConnection.DB_USERNAME%>"
-                                                       password="<%= DBConnection.DB_PASSWORD%>"/>
-
-                                    <sql:query dataSource="${myDS}" var="users">
-                                        SELECT complain.id AS id, title, category, complain.created_at, complain.`status`, `user`.`name` FROM complain INNER JOIN `user` WHERE `complain`.user_id = `user`.id AND `complain`.`active_status` = 1
-                                    </sql:query>
-
-                                    <c:forEach var="row" items="${users.rows}">
-                                        <tr>
-                                            <td>${row.id}</td>
-                                            <td>${row.title}</td>
-                                            <td>${row.category}</td>
-                                            <td>${row.name}</td>
-                                            <td>${row.status}</td>
-                                            <td>${row.created_at}</td>
-                                            <td>
-                                                <div class="btn-group btn-group-xs  ">
-                                                    <button id="btn-row-view" class="btn btn-success">
-                                                        View
-                                                    </button>
-                                                </div>
-                                                <div class="btn-group btn-group-xs  ">
-                                                    <button id="btn-row-edit" class="btn btn-info">
-                                                        Approve
-                                                    </button>
-                                                </div>
-                                                <div class="btn-group btn-group-xs  ">
-                                                    <button id="btn-row-delete" onclick="removeUser(${row.id})"class="btn btn-danger">
-                                                        Reject
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
         <!-- ============================================================== -->
@@ -201,168 +236,73 @@
 
 <script>
 
-    function show_insert_form() {
-        var content = '';
-        content += '<button onclick="hide_insert_form()" class="btn btn-info">Hide Form</button>';
-        $('#div_button').html(content);
-        $("#div_add").show();
-        $('#div_edit').hide();
-        $('#txt_sub_category_id_update').val('');
-        $('#txt_sub_category_name_update').val('');
-    }
-
-    function hide_insert_form() {
-        var content = '';
-        content += '<button onclick="show_insert_form()" class="btn btn-info">Add New User</button>';
-        $('#div_button').html(content);
-        $("#div_add").hide();
-    }
-
-    function hide_update_form() {
-        var content = '';
-        content += '<button onclick="show_update_form()" class="btn btn-info">Show Update Form</button>';
-        $('#div_button').html(content);
-        $("#div_edit").hide();
-    }
-
-    function show_update_form() {
-        var content = '';
-        content += '<button onclick="hide_update_form()" class="btn btn-info">Hide Form</button>';
-        $('#div_button').html(content);
-        $("#div_edit").show();
-    }
 
 
     $(document).ready(function () {
 
-        $("#div_add").hide();
-        $("#div_edit").hide();
 
-
-        $("#form_insert").validate({
-            ignore: [],
-            rules: {
-                name: {
-                    required: true
-                },
-                email: {
-                    required: true
-                },
-                mobile: {
-                    required: true
-                },
-                role: {
-                    required: true
-                },
-                password: {
-                    required: true
-                },
-                confirm_password: {
-                    required: true,
-                    equalTo: "#password"
-                }
-            },
-            submitHandler: function (form) {
-                $.ajax({
-                    url: '${pageScope.baseURL}/CreateUserController',
-                    data: $('#form_insert').serializeArray(),
-                    dataType: 'json',
-                    method: 'post',
-                    error: function (error) {
-
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong!',
-                        })
-
-                    },
-                    success: function (r) {
-
-                        if (r.status == 200) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: r.message,
-                                onClose: () => {
-//                                    location.replace("users.jsp");
-                                    location.reload();
-                                }
-                            });
-
-                        }
-
-                        if (r.status == 500) {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: r.message,
-                            })
-                        }
-
-                    }
-                });
-            }
-        });
 
 
     });
 
 
-    function removeUser(userId) {
-        console.log(userId)
-        Swal.fire({
-            title: "Do you want to remove this user?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#fcb03b",
-            confirmButtonText: "Yes, remove it!",
-            cancelButtonText: "No, cancel it!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    url: '${pageScope.baseURL}/DeleteUserController',
-                    data: {id: userId},
-                    dataType: 'json',
-                    method: 'post',
-                    error: function (error) {
 
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong!',
-                        })
 
-                    },
-                    success: function (r) {
 
-                        if (r.status == 200) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: r.message,
-                                onClose: () => {
-//                                    location.replace("users.jsp");
-                                    location.reload();
-                                }
-                            });
+    function viewComplain(id) {
 
-                        }
+        $.ajax({
+            url: '${pageScope.baseURL}/GetComplainDetails',
+            data: {id: id},
+            dataType: 'json',
+            method: 'get',
+            error: function (error) {
 
-                        if (r.status == 500) {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: r.message,
-                            })
-                        }
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
 
-                    }
-                });
+            },
+            success: function (r) {
+                console.log(r)
+                if (r.status == 200) {
+
+                    $('#title').val("");
+                    $('#category').val("");
+                    $('#date').val("");
+                    $('#time').val("");
+                    $('#complained_date').val("");
+                    $('#complainer_name').val("");
+                    $('#complainer_email').val("");
+                    $('#complainer_mobile').val("");
+                    $('#description').val("");
+
+
+                    $('#title').val(r.data.title);
+                    $('#category').val(r.data.category);
+                    $('#date').val(r.data.date);
+                    $('#time').val(r.data.time);
+                    $('#complained_date').val(r.data.createdAt);
+                    $('#complainer_name').val(r.data.complainer);
+                    $('#complainer_email').val(r.data.complainerEmail);
+                    $('#complainer_mobile').val(r.data.complainerMobile);
+                    $('#description').val(r.data.description);
+
+                    $('.bs-example-modal-lg').modal();
+                }
+
+                if (r.status == 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Something went wrong!',
+                    })
+                }
+
             }
-        })
+        });
 
 
     }

@@ -5,7 +5,10 @@
  */
 package controller;
 
-import model.UserModel;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import dto.Complain;
+import model.ComplainModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,45 +17,48 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import org.json.simple.JSONObject;
 
 /**
  *
  * @author abhi
  */
-@WebServlet(name = "ApproveComplain", urlPatterns = {"/ApproveComplain"})
-public class ApproveComplain extends HttpServlet {
-
+@WebServlet(name = "GetComplainDetails", urlPatterns = {"/GetComplainDetails"})
+public class GetComplainDetails extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         JSONObject objSend = new JSONObject();
+        JsonElement data = null;
 
         int status = 200;
-        String message = "";
         try {
 
             int id = Integer.parseInt(request.getParameter("id"));
 
-            boolean result = UserModel.removeUser(id);
+            Complain complain = ComplainModel.getComplainById(id);
 
-            if (result) {
+            if(complain != null){
+
+                Gson g = new Gson();
+                 data = g.toJsonTree(complain, Complain.class);
+                
+                
+
                 status = 200;
-                message = "Successfully Removed!";
-            } else {
+            }else{
                 status = 500;
-                message = "Something Went Wrong!";
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             status = 500;
-            message = "Something Went Wrong!";
         }
 
         objSend.put("status", status);
-        objSend.put("message", message);
+        objSend.put("data", data);
 
         System.out.println(objSend.toString());
 
@@ -63,7 +69,6 @@ public class ApproveComplain extends HttpServlet {
         } finally {
             out.close();
         }
-
 
     }
 
