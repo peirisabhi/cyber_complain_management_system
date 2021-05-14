@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%
-    if (session.getAttribute("admin_id") == null) {
+    if (session.getAttribute("id") == null) {
         response.sendRedirect("login.jsp");
     }
 %>
@@ -15,7 +15,7 @@
 
 <head>
 
-    <title>Knowledge Q&A Dashboard Template</title>
+    <title>Cyber Crime</title>
     <%@include file="template/header.jsp" %>
 
 </head>
@@ -232,6 +232,7 @@
         $('#date').val("");
         $('#time').val("");
         $('#other_category').val("");
+        $('#message').val("");
         $('#category').val(0);
         $('#other').hide();
 

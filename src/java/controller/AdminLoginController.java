@@ -37,16 +37,22 @@ public class AdminLoginController extends HttpServlet {
 //        System.out.println(user);
         if(user != null){
             if(user.getPassword().equals(password)){
+                System.out.println(user.getRole_id());
+                if(user.getRole_id() != 1) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("admin_id", user.getId());
+                    session.setAttribute("name", user.getName());
+                    session.setAttribute("email", user.getEmail());
+                    session.setAttribute("mobile", user.getMobile());
+                    session.setAttribute("user_role", user.getUserRole());
+                    session.setAttribute("user_role_id", user.getRole_id());
 
-                HttpSession session = request.getSession();
-                session.setAttribute("admin_id", user.getId());
-                session.setAttribute("name", user.getName());
-                session.setAttribute("email", user.getEmail());
-                session.setAttribute("mobile", user.getMobile());
-                session.setAttribute("user_role", user.getUserRole());
-                session.setAttribute("user_role_id", user.getRole_id());
+                    response.sendRedirect("admin/home.jsp");
+                }else{
+                    status = 500;
+                    message = "Invalid Conditionals!";
+                }
 
-                response.sendRedirect("admin/home.jsp");
             }else{
                 status = 500;
                 message = "Invalid Password!";
@@ -57,7 +63,7 @@ public class AdminLoginController extends HttpServlet {
         }
 
         if(status == 500){
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            response.sendRedirect("admin/index.jsp");
         }
 
 

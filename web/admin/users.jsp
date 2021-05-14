@@ -139,8 +139,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group row">
-                                                    <label class="control-label text-right col-md-2">Main
-                                                        Category</label>
+                                                    <label class="control-label text-right col-md-2">User Role</label>
                                                     <div class="col-md-10">
                                                         <select class="form-control custom-select" id="role" name="role"
                                                                 tabindex="1">
@@ -158,7 +157,7 @@
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-2">Password</label>
                                                     <div class="col-md-10">
-                                                        <input type="text" id="password" name="password"
+                                                        <input type="password" id="password" name="password"
                                                                class="form-control" required>
                                                     </div>
                                                 </div>
@@ -170,7 +169,7 @@
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-2">Password</label>
                                                     <div class="col-md-10">
-                                                        <input type="text" id="confirm_password" name="confirm_password"
+                                                        <input type="password" id="confirm_password" name="confirm_password"
                                                                class="form-control" required>
                                                     </div>
                                                 </div>
@@ -199,41 +198,6 @@
             </div>
             <!-- Row -->
 
-            <!-- Row -->
-            <div id="div_edit">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card card-outline-info">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">Update sub category form</h4>
-                            </div>
-                            <div class="card-body">
-                                <form id="form_update" name="form_update" role="form" method="POST"
-                                      class="form-horizontal">
-
-                                    <div class="form-actions">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-offset-3 col-md-9">
-                                                        <button type="submit" class="btn btn-success">Update</button>
-                                                        <button type="reset" class="btn btn-inverse">Clear</button>
-                                                        <button type="button" onclick="show_insert_form()"
-                                                                class="btn btn-info">Add Sub Category
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6"></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Row -->
 
             <!-- Row -->
             <div class="row">
@@ -352,7 +316,7 @@
     $(document).ready(function () {
 
         $("#div_add").hide();
-        $("#div_edit").hide();
+        // $("#div_edit").hide();
 
 
         $("#form_insert").validate({
@@ -396,6 +360,13 @@
                     success: function (r) {
 
                         if (r.status == 200) {
+
+                            $("#name").val("");
+                            $("#email").val("");
+                            $("#mobile").val("");
+                            $("#password").val("");
+                            $("#confirm_password").val("");
+
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',

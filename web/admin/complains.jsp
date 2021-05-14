@@ -324,14 +324,14 @@
         <script>
 
             function viewComplain(id) {
-
+                $('.preloader').show();
                 $.ajax({
                     url: '${pageScope.baseURL}/GetComplainDetails',
                     data: {id: id},
                     dataType: 'json',
                     method: 'get',
                     error: function (error) {
-
+                        $('.preloader').hide();
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
@@ -340,6 +340,7 @@
 
                     },
                     success: function (r) {
+                        $('.preloader').hide();
                         console.log(r)
                         if (r.status == 200) {
 
@@ -383,13 +384,14 @@
 
 
             function approve(id) {
+                $('.preloader').show();
                 $.ajax({
                     url: '${pageScope.baseURL}/ApproveComplain',
                     data: {id: id},
                     dataType: 'json',
                     method: 'post',
                     error: function (error) {
-
+                        $('.preloader').hide();
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
@@ -399,6 +401,7 @@
                     },
                     success: function (r) {
                         console.log(r)
+                        $('.preloader').hide();
                         if (r.status == 200) {
 
                             Swal.fire({
@@ -425,13 +428,14 @@
             }
 
             function reject(id) {
+                $('.preloader').show();
                 $.ajax({
                     url: '${pageScope.baseURL}/RejectComplain',
                     data: {id: id},
                     dataType: 'json',
                     method: 'post',
                     error: function (error) {
-
+                        $('.preloader').hide();
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
@@ -440,6 +444,7 @@
 
                     },
                     success: function (r) {
+                        $('.preloader').hide();
                         console.log(r)
                         if (r.status == 200) {
 

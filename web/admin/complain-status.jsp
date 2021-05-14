@@ -107,7 +107,7 @@
                                                        password="<%= DBConnection.DB_PASSWORD%>"/>
 
                                     <sql:query dataSource="${myDS}" var="users">
-                                        SELECT complain.id AS id, title, category, complain.created_at, complain.`status`, complain.active_status, `user`.`name` FROM complain INNER JOIN `user` WHERE `complain`.user_id = `user`.id AND `complain`.`active_status` != 0
+                                        SELECT complain.id AS id, title, category, complain.created_at, complain.`status`, complain.active_status, `user`.`name` FROM complain INNER JOIN `user` WHERE `complain`.user_id = `user`.id AND `complain`.`active_status` = 2
                                     </sql:query>
 
                                     <c:forEach var="row" items="${users.rows}">

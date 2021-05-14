@@ -22,9 +22,9 @@
                 <ul class="top-nav nav-right">
                     <% if (session.getAttribute("id") == null) { %>
 
-                    <li><a href="login.jsp"><i class="fa fa-lock" aria-hidden="true"></i>Login</a>
+                    <li><a href="login.jsp">Login</a>
                     </li>
-                    <li><a href="register.jsp"><i class="fa fa-user-plus" aria-hidden="true"></i>Signup</a>
+                    <li><a href="register.jsp">Signup</a>
                     </li>
 
                     <% } else {%>
@@ -41,11 +41,9 @@
                         </a>
                         <ul class="dropdown-menu ">
                             <%--                            <li><a href=""><i class=" icon-bargraph"></i> Dashboard</a></li>--%>
-                            <li><a href="profile.jsp"><i
-                                    class=" icon-gears"></i> Profile Setting</a></li>
-                            <li><a href="my-complains.jsp"><i
-                                    class="icon-heart"></i> My Complains</a></li>
-                            <li><a href="ComplainerLogout"><i class="icon-lock"></i> Logout</a></li>
+                            <li><a href="profile.jsp"> Profile Setting</a></li>
+                            <li><a href="my-complains.jsp"> My Complains</a></li>
+                            <li><a href="ComplainerLogout"> Logout</a></li>
                         </ul>
                     </li>
 

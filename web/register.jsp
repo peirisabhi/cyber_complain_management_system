@@ -9,7 +9,7 @@
 <html lang="en">
 
     <head>
-        <title>Knowledge Q&A Dashboard Template</title>
+        <title>Cyber Crime</title>
         <%@include file="template/header.jsp" %>
     </head>
 
@@ -93,8 +93,8 @@
                                         <div class="row">
 
                                             <div class="col-xs-12 text-right">
-                                                <p class="help-block"><a data-toggle="modal" href="login.html">Already Register Sing In</a>
-                                                </p>
+<%--                                                <p class="help-block"><a data-toggle="modal" href="login.html">Already Register Sing In</a>--%>
+<%--                                                </p>--%>
                                             </div>
                                         </div>
                                     </div>
@@ -114,92 +114,7 @@
             </section>
             <!-- =-=-=-=-=-=-= Register Form End =-=-=-=-=-=-= -->
 
-            <!-- =-=-=-=-=-=-= Our Clients =-=-=-=-=-=-= -->
-            <section class="custom-padding" id="clients">
-                <div class="container">
 
-                    <!-- Row -->
-                    <div class="row">
-
-                        <!-- col-md-2 client-block -->
-                        <div class="col-md-2 col-xs-6 col-sm-4 client-block">
-
-                            <!-- client-item client-item-style-2 -->
-                            <div class="client-item client-item-style-2">
-                                <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_5.png"> </a>
-                            </div>
-                            <!-- /client-item client-item-style-2 -->
-
-                        </div>
-                        <!-- /col-md-2 client-block -->
-
-                        <!-- col-md-2 client-block -->
-                        <div class="col-md-2 col-xs-6 col-sm-4 client-block">
-
-                            <!-- client-item client-item-style-2 -->
-                            <div class="client-item client-item-style-2">
-                                <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_6.png"> </a>
-                            </div>
-                            <!-- /client-item client-item-style-2 -->
-
-                        </div>
-                        <!-- /col-md-2 client-block -->
-
-                        <!-- col-md-2 client-block -->
-                        <div class="col-md-2 col-xs-6 col-sm-4 client-block">
-
-                            <!-- client-item client-item-style-2 -->
-                            <div class="client-item client-item-style-2">
-                                <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_7.png"> </a>
-                            </div>
-                            <!-- /client-item client-item-style-2 -->
-
-                        </div>
-                        <!-- /col-md-2 client-block -->
-
-                        <!-- col-md-2 client-block -->
-                        <div class="col-md-2 col-xs-6 col-sm-4 client-block">
-
-                            <!-- client-item client-item-style-2 -->
-                            <div class="client-item client-item-style-2">
-                                <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_8.png"> </a>
-                            </div>
-                            <!-- /client-item client-item-style-2 -->
-
-                        </div>
-                        <!-- /col-md-2 client-block -->
-
-                        <!-- col-md-2 client-block -->
-                        <div class="col-md-2 col-xs-6 col-sm-4 client-block">
-
-                            <!-- client-item client-item-style-2 -->
-                            <div class="client-item client-item-style-2">
-                                <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_9.png"> </a>
-                            </div>
-                            <!-- /client-item client-item-style-2 -->
-
-                        </div>
-                        <!-- /col-md-2 client-block -->
-
-                        <!-- col-md-2 client-block -->
-                        <div class="col-md-2 col-xs-6 col-sm-4 client-block">
-
-                            <!-- client-item client-item-style-2 -->
-                            <div class="client-item client-item-style-2">
-                                <a title="Client Logo" href="#"> <img alt="Clients Logo" src="images/clients/client_10.png"> </a>
-                            </div>
-                            <!-- /client-item client-item-style-2 -->
-
-                        </div>
-                        <!-- /col-md-2 client-block -->
-
-                    </div>
-                    <!-- Row End -->
-
-                </div>
-                <!-- end container -->
-            </section>
-            <!-- =-=-=-=-=-=-= Our Clients -end =-=-=-=-=-=-= -->
 
         </div>
         <!-- =-=-=-=-=-=-= Main Area End =-=-=-=-=-=-= -->

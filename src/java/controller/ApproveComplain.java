@@ -70,4 +70,9 @@ public class ApproveComplain extends HttpServlet {
 
 
 
+    void sendMail(){
+        
+    }
+    
+    
 }

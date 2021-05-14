@@ -17,7 +17,7 @@
             <!-- logo -->
             <a href="index.jsp" class="navbar-brand">
                 <img class="img-responsive" alt=""
-                     src="https://templates.scriptsbundle.com/knowledge/demo/images/logo.png">
+                     src="../images/logo.jpg">
             </a>
             <!-- header end -->
         </div>

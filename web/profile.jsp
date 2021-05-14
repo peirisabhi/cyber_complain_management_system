@@ -15,7 +15,7 @@
 
 <head>
 
-    <title>Knowledge Q&A Dashboard Template</title>
+    <title>Cyber Crime</title>
     <%@include file="template/header.jsp" %>
 
 </head>
