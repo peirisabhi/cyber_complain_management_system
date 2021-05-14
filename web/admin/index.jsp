@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="req" value="${pageContext.request}"/>
+<c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,15 +51,15 @@
         <div class="login-register" style="background-image:url(assets/images/background/back1.jpeg);">
             <div class="login-box card">
                 <div class="card-body">
-                    <form class="form-horizontal form-material" id="loginform" action="index.html">
+                    <form class="form-horizontal form-material" id="loginform" method="post" action="${pageScope.baseURL}/AdminLoginController">
                         <h3 class="box-title m-b-20">Sign In</h3>
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Username"> </div>
+                                <input class="form-control" name="email" type="text" required="" placeholder="Username"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Password"> </div>
+                                <input class="form-control" name="password" type="password" required="" placeholder="Password"> </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12 font-14">
@@ -83,23 +87,23 @@
                             </div>
                         </div>
                     </form>
-                    <form class="form-horizontal" id="recoverform" action="index.html">
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <h3>Recover Password</h3>
-                                <p class="text-muted">Enter your Email and instructions will be sent to you! </p>
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Email"> </div>
-                        </div>
-                        <div class="form-group text-center m-t-20">
-                            <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
-                            </div>
-                        </div>
-                    </form>
+<%--                    <form class="form-horizontal" id="recoverform" action="index.html">--%>
+<%--                        <div class="form-group ">--%>
+<%--&lt;%&ndash;                            <div class="col-xs-12">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                <h3>Recover Password</h3>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                <p class="text-muted">Enter your Email and instructions will be sent to you! </p>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                            </div>&ndash;%&gt;--%>
+<%--                        </div>--%>
+<%--                        <div class="form-group ">--%>
+<%--                            <div class="col-xs-12">--%>
+<%--                                <input class="form-control" type="text" required="" placeholder="Email"> </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="form-group text-center m-t-20">--%>
+<%--                            <div class="col-xs-12">--%>
+<%--                                <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </form>--%>
                 </div>
             </div>
         </div>

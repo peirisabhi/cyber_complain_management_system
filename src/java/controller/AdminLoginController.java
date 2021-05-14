@@ -46,7 +46,7 @@ public class AdminLoginController extends HttpServlet {
                 session.setAttribute("user_role", user.getUserRole());
                 session.setAttribute("user_role_id", user.getRole_id());
 
-                response.sendRedirect("home.jsp");
+                response.sendRedirect("admin/home.jsp");
             }else{
                 status = 500;
                 message = "Invalid Password!";
