@@ -19,17 +19,19 @@ public class Mail {
 
     public static void sendMail(String to, String subject, String msg) {
 
-//        final String username = "abhitest999@gmail.com";
-//        final String password = "mB6Ph5SK5jbJww2";
-        final String username = "lkpet.team@gmail.com";
-        final String password = "2001adp54";
 
+        final String username = "";
+        final String password = "";
+
+        // gmail mail server confi start
         Properties prop = new Properties();
-        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.host", "smtp.gmail.com");  
         prop.put("mail.smtp.port", "465");
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.socketFactory.port", "465");
         prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        
+        // gmail mail server confi end--
 
         Session session = Session.getInstance(prop,
                 new javax.mail.Authenticator() {
@@ -42,10 +44,7 @@ public class Mail {
 
             javax.mail.Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("info.cms.sl@gmail.com"));
-            message.setRecipients(
-                    javax.mail.Message.RecipientType.TO,
-                    InternetAddress.parse(to)
-            );
+            message.setRecipients(javax.mail.Message.RecipientType.TO,InternetAddress.parse(to));
             message.setSubject(subject);
             message.setText(msg);
             message.setContent(msg,"text/html");
