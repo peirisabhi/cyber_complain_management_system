@@ -16,12 +16,12 @@ public class Complain implements Serializable {
     String complainer;
     String complainerEmail;
     String complainerMobile;
-
+    String comment;
 
     public Complain() {
     }
 
-    public Complain(int id, String title, String category, String date, String time, String description, String createdAt, String userId, String status, String complainer, String complainerEmail, String complainerMobile) {
+    public Complain(int id, String title, String category, String date, String time, String description, String createdAt, String userId, String status, String complainer, String complainerEmail, String complainerMobile, String comment) {
         this.id = id;
         this.title = title;
         this.category = category;
@@ -34,8 +34,8 @@ public class Complain implements Serializable {
         this.complainer = complainer;
         this.complainerEmail = complainerEmail;
         this.complainerMobile = complainerMobile;
+        this.comment = comment;
     }
-
 
     public int getId() {
         return id;
@@ -133,6 +133,13 @@ public class Complain implements Serializable {
         this.complainerMobile = complainerMobile;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     @Override
     public String toString() {

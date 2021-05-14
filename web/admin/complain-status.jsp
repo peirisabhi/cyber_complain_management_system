@@ -59,7 +59,7 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Manage Complains</h3>
+                <h3 class="text-themecolor">Manage Complains Status</h3>
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
@@ -120,29 +120,14 @@
                                             <td>${row.created_at}</td>
                                             <td>
 
-                                                <c:if test="${row.active_status == 1}">
+<%--                                                <c:if test="${row.active_status == 1}">--%>
                                                     <div class="btn-group btn-group-xs  ">
-                                                        <button id="btn-row-edit" class="btn btn-info" onclick="approve(${row.id})">
-                                                            Approve
+                                                        <button id="btn-row-edit" class="btn btn-info" onclick="viewComplain(${row.id})">
+                                                            Edit
                                                         </button>
                                                     </div>
-                                                    <div class="btn-group btn-group-xs  ">
-                                                        <button id="btn-row-delete" onclick="reject(${row.id})"
-                                                                class="btn btn-danger">
-                                                            Reject
-                                                                <%--<%= // ((String)pageContext.findAttribute("status"))  %>--%>
-                                                                <%--<%= // ((String)pageContext.findAttribute("status")) == "Pending"  %>--%>
-                                                        </button>
-                                                    </div>
-                                                </c:if>
 
-                                                <div class="btn-group btn-group-xs  ">
-                                                    <button id="btn-row-view" class="btn btn-success"
-                                                            onclick="viewComplain(${row.id})">
-                                                        View
-                                                    </button>
-                                                </div>
-
+<%--                                                </c:if>--%>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -174,6 +159,8 @@
                                                 <div class="col-md-10">
                                                     <input type="text" disabled id="title" class="form-control"
                                                            required>
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -282,11 +269,46 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complain Status</label>
+                                                <div class="col-md-10">
+                                                    <select class="form-control custom-select" id="status" name="status"
+                                                            tabindex="1">
+                                                        <option selected disabled>Select Complain Status</option>
+                                                        <option value="Recovered">Recovered</option>
+                                                        <option value="In Progress">In Progress</option>
+                                                        <option value="Date Insufficient To Process">Date Insufficient To Process</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <label class="control-label text-right col-md-2">Complain
+                                                    Comment</label>
+                                                <div class="col-md-10">
+                                                            <textarea class="form-control" id="comment" name="comment"
+                                                                      rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <input name="id" id="id" value="0" hidden/>
                             </form>
                         </div>
                         <div class="modal-footer">
+                            <button type="button" onclick="updateStatus()" class="btn btn-success waves-effect text-left" data-dismiss="modal">
+                                Update Complain
+                            </button>
+
                             <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">
                                 Close
                             </button>
@@ -325,14 +347,14 @@
 <script>
 
     function viewComplain(id) {
-
+        $('.preloader').show();
         $.ajax({
             url: '${pageScope.baseURL}/GetComplainDetails',
             data: {id: id},
             dataType: 'json',
             method: 'get',
             error: function (error) {
-
+                $('.preloader').hide();
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -341,9 +363,11 @@
 
             },
             success: function (r) {
+                $('.preloader').hide();
                 console.log(r)
                 if (r.status == 200) {
 
+                    $('#id').val("");
                     $('#title').val("");
                     $('#category').val("");
                     $('#date').val("");
@@ -353,8 +377,11 @@
                     $('#complainer_email').val("");
                     $('#complainer_mobile').val("");
                     $('#description').val("");
+                    $('#comment').val("");
+                    $('#status').val("");
 
 
+                    $('#id').val(r.data.id);
                     $('#title').val(r.data.title);
                     $('#category').val(r.data.category);
                     $('#date').val(r.data.date);
@@ -364,6 +391,8 @@
                     $('#complainer_email').val(r.data.complainerEmail);
                     $('#complainer_mobile').val(r.data.complainerMobile);
                     $('#description').val(r.data.description);
+                    $('#comment').val(r.data.comment);
+                    $('#status').val(r.data.status);
 
                     $('.bs-example-modal-lg').modal();
                 }
@@ -383,14 +412,17 @@
     }
 
 
-    function approve(id) {
+    function updateStatus() {
+
+        $('.preloader').show();
+
         $.ajax({
-            url: '${pageScope.baseURL}/ApproveComplain',
-            data: {id: id},
+            url: '${pageScope.baseURL}/UpdateComplainStatusController',
+            data: $('#form_insert').serializeArray(),
             dataType: 'json',
             method: 'post',
             error: function (error) {
-
+                $('.preloader').hide();
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -399,48 +431,7 @@
 
             },
             success: function (r) {
-                console.log(r)
-                if (r.status == 200) {
-
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: r.message,
-                        onClose: () => {
-                            //                                    location.replace("users.jsp");
-                            location.reload();
-                        }
-                    });
-                }
-
-                if (r.status == 500) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: r.message,
-                    })
-                }
-
-            }
-        });
-    }
-
-    function reject(id) {
-        $.ajax({
-            url: '${pageScope.baseURL}/RejectComplain',
-            data: {id: id},
-            dataType: 'json',
-            method: 'post',
-            error: function (error) {
-
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                })
-
-            },
-            success: function (r) {
+                $('.preloader').hide();
                 console.log(r)
                 if (r.status == 200) {
 

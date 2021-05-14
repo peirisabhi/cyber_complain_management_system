@@ -5,13 +5,16 @@
  */
 package controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import model.ComplainModel;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -20,69 +23,51 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "UpdateComplainStatusController", urlPatterns = {"/UpdateComplainStatusController"})
 public class UpdateComplainStatusController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UpdateComplainStatusController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UpdateComplainStatusController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        JSONObject objSend = new JSONObject();
+
+        int status = 200;
+        String message = "";
+        try {
+
+            int id = Integer.parseInt(request.getParameter("id"));
+            String comment = request.getParameter("comment");
+            String complainStatus = request.getParameter("status");
+
+            boolean result = ComplainModel.updateComplainStatus(id, comment, complainStatus);
+
+            if (result) {
+                status = 200;
+                message = "Successfully Approved!";
+            } else {
+                status = 500;
+                message = "Something Went Wrong!";
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = 500;
+            message = "Something Went Wrong!";
+        }
+
+        objSend.put("status", status);
+        objSend.put("message", message);
+
+        System.out.println(objSend.toString());
+
+        response.setContentType("text/json;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try {
+            out.print(objSend);
+        } finally {
+            out.close();
+        }
+
+
+    }
 
 }

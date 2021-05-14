@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ComplainModel {
-    public static boolean saveComplain(String title, String category,  String date, String time, String description, int userId) {
+    public static boolean saveComplain(String title, String category, String date, String time, String description, int userId) {
 
         Connection connection = null;
         boolean status = true;
@@ -31,7 +31,6 @@ public class ComplainModel {
             preparedStatement1.executeUpdate();
 
 
-
         } catch (Exception e) {
             e.printStackTrace();
             status = false;
@@ -48,7 +47,7 @@ public class ComplainModel {
     }
 
 
-    public static Complain getComplainById(int id){
+    public static Complain getComplainById(int id) {
         Connection connection = null;
         Complain complain = null;
 
@@ -56,7 +55,7 @@ public class ComplainModel {
 
             connection = DBConnection.getConnection();
 
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM  complain INNER JOIN `user` WHERE `complain`.user_id = `user`.id  AND `complain`.`active_status` = 1 AND complain.id = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM  complain INNER JOIN `user` WHERE `complain`.user_id = `user`.id  AND `complain`.`active_status` != 0 AND complain.id = ?");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -71,9 +70,10 @@ public class ComplainModel {
                 complain.setCreatedAt(resultSet.getString(7));
                 complain.setUserId(resultSet.getString(8));
                 complain.setStatus(resultSet.getString(10));
-                complain.setComplainer(resultSet.getString(12));
-                complain.setComplainerEmail(resultSet.getString(13));
-                complain.setComplainerMobile(resultSet.getString(14));
+                complain.setComment(resultSet.getString(11));
+                complain.setComplainer(resultSet.getString(13));
+                complain.setComplainerEmail(resultSet.getString(14));
+                complain.setComplainerMobile(resultSet.getString(15));
 
 
             }
@@ -92,7 +92,7 @@ public class ComplainModel {
     }
 
 
-    public static boolean approveComplain(int id){
+    public static boolean approveComplain(int id) {
         Connection connection = null;
         boolean status = true;
 
@@ -124,7 +124,39 @@ public class ComplainModel {
     }
 
 
-    public static boolean rejectComplain(int id){
+    public static boolean updateComplainStatus(int id, String comment, String complainStatus) {
+        Connection connection = null;
+        boolean status = true;
+
+        try {
+
+            connection = DBConnection.getConnection();
+
+            PreparedStatement preparedStatement1 = connection.prepareStatement("UPDATE complain SET status = ?, comment = ? WHERE id = ?");
+            preparedStatement1.setString(1, complainStatus);
+            preparedStatement1.setString(2, comment);
+            preparedStatement1.setInt(3, id);
+
+            preparedStatement1.executeUpdate();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = false;
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+
+        return status;
+    }
+
+
+    public static boolean rejectComplain(int id) {
         Connection connection = null;
         boolean status = true;
 
