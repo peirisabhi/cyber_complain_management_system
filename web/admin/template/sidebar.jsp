@@ -20,7 +20,7 @@
                     <!-- User profile text-->
                     <div class="profile-text">
                         <h5>Markarn Doe</h5>
-                        <a href="pages-login.html" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                        <a href="${pageScope.baseURL}/AdminLogout" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
 <%--                        <div class="dropdown-menu animated flipInY">--%>
 <%--                           --%>
 <%--                            <!-- text-->--%>

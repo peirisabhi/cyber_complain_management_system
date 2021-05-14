@@ -45,7 +45,7 @@
                                     class=" icon-gears"></i> Profile Setting</a></li>
                             <li><a href="my-complains.jsp"><i
                                     class="icon-heart"></i> My Complains</a></li>
-                            <li><a href="#"><i class="icon-lock"></i> Logout</a></li>
+                            <li><a href="ComplainerLogout"><i class="icon-lock"></i> Logout</a></li>
                         </ul>
                     </li>
 
