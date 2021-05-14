@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- logo -->
-            <a href="https://templates.scriptsbundle.com/knowledge/demo/index.html" class="navbar-brand">
+            <a href="index.jsp" class="navbar-brand">
                 <img class="img-responsive" alt=""
                      src="https://templates.scriptsbundle.com/knowledge/demo/images/logo.png">
             </a>
