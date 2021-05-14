@@ -5,7 +5,7 @@
  */
 package controller;
 
-import model.UserModel;
+import model.ComplainModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -35,11 +36,11 @@ public class ApproveComplain extends HttpServlet {
 
             int id = Integer.parseInt(request.getParameter("id"));
 
-            boolean result = UserModel.removeUser(id);
+            boolean result = ComplainModel.approveComplain(id);
 
             if (result) {
                 status = 200;
-                message = "Successfully Removed!";
+                message = "Successfully Approved!";
             } else {
                 status = 500;
                 message = "Something Went Wrong!";

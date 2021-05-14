@@ -92,4 +92,68 @@ public class ComplainModel {
     }
 
 
+    public static boolean approveComplain(int id){
+        Connection connection = null;
+        boolean status = true;
+
+        try {
+
+            connection = DBConnection.getConnection();
+
+            PreparedStatement preparedStatement1 = connection.prepareStatement("UPDATE complain SET status = ?, active_status = ? WHERE id = ?");
+            preparedStatement1.setString(1, "Approved");
+            preparedStatement1.setInt(2, 2);
+            preparedStatement1.setInt(3, id);
+
+            preparedStatement1.executeUpdate();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = false;
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+
+        return status;
+    }
+
+
+    public static boolean rejectComplain(int id){
+        Connection connection = null;
+        boolean status = true;
+
+        try {
+
+            connection = DBConnection.getConnection();
+
+            PreparedStatement preparedStatement1 = connection.prepareStatement("UPDATE complain SET status = ?, active_status = ? WHERE id = ?");
+            preparedStatement1.setString(1, "Rejected");
+            preparedStatement1.setInt(2, 3);
+            preparedStatement1.setInt(3, id);
+
+            preparedStatement1.executeUpdate();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = false;
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+
+        return status;
+    }
+
+
 }
