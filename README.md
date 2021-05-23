@@ -1,0 +1,17 @@
+# cyber_complain_management_system
+
+![img](images/Capture1.PNG)
+![img](images/Capture2.PNG)
+![img](images/Capture3.PNG)
+![img](images/Capture4.PNG)
+![img](images/Capture5.PNG)
+![img](images/Capture6.PNG)
+![img](images/Capture7.PNG)
+![img](images/Capture8.PNG)
+![img](images/Capture9.PNG)
+![img](images/Capture10.PNG)
+![img](images/Capture11.PNG)
+![img](images/Capture12.PNG)
+![img](images/13.PNG)
+![img](images/Capture14.PNG)
+![img](images/Capture15.PNG)
