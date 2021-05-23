@@ -13,7 +13,7 @@
         <div class="auto-container clearfix">
             <!--Copyright-->
             <div class="copyright text-center">Copyright 2021 &copy; Created By <a target="_blank"
-                                                                                         href="#">Chathri</a>
+                                                                                         href="#">Abhi</a>
                 All Rights Reserved
             </div>
         </div>
