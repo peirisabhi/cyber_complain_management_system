@@ -2,34 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/home.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/AdminLogout.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/template/topbar.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/CreateUserController.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/AdminLoginController.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/template/scripts.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/mail/Mail.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/DeleteUserController.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/login.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/users.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/template/footer.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/template/sidebar.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/complains.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/GetComplainDetails.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/template/navigation.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/complain-status.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/my-complains.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/model/ComplainModel.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/db/DBConnection.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/template/topbar.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/ApproveComplain.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/RejectComplain.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/template/header.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/ComplainerLogout.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/profile.jsp</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/src/java/controller/UpdateComplainStatusController.java</file>
-            <file>file:/F:/Abhishek/CyberCrime/CyberCrime/web/admin/index.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

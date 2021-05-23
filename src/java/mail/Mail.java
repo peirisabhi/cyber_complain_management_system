@@ -19,9 +19,10 @@ public class Mail {
 
     public static void sendMail(String to, String subject, String msg) {
 
-
-        final String username = "";
-        final String password = "";
+//        final String username = "abhitest999@gmail.com";
+//        final String password = "mB6Ph5SK5jbJww2";
+        final String username = "lkpet.team@gmail.com";
+        final String password = "2001adp54";
 
         // gmail mail server confi start
         Properties prop = new Properties();
